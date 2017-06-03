@@ -24,14 +24,14 @@
                 id: 2,
                 name: 'David Malan',
                 phoneNumber: '+157975489643',
-                company: 'facebook',
+                company: 'cs50',
                 image: 'malan.png'
                 
             }, {
                 id: 3,
                 name: 'Bill Gates',
                 phoneNumber: '+216854797548',
-                company: 'facebook',
+                company: 'microsoft',
                 image: 'gates.jpg'
                 
             }, {
@@ -66,7 +66,7 @@
             handleSearch: function(event) {
                 var searchQuery = event.target.value.toLowerCase();
                 var displayedContacts = CONTACTS.filter(function(el) {
-                    var searchValue = el.name.toLowerCase() && el.company.toLowerCase() && el.phoneNumber;
+                    var searchValue = el.name.toLowerCase()
                     console.log(searchValue)
                     return searchValue.indexOf(searchQuery) !== -1;
                 });
@@ -76,6 +76,7 @@
             },
             render: function() {
                 return (
+
                     <div className="contacts">
                         <input type="text" placeholder="Search..." className="search-field" onChange={this.handleSearch} />
                         <ul className="contacts-list">
